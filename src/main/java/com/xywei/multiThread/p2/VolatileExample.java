@@ -12,8 +12,29 @@ public class VolatileExample {
 
     public void reader() {
         if (v == true) {
-            // 这里 x 会是多少呢？
+            System.out.println("x=" + x);
         }
+    }
+
+    public static void main(String[] args) {
+//        VolatileExample volatileExample = new VolatileExample();
+//        new Thread(() -> {
+//            volatileExample.writer();
+//        }).start();
+//
+//        new Thread(() -> {
+//            volatileExample.reader();
+//        }).start();
+
+        new VolatileExample(4,false);
+
+    }
+
+
+    public VolatileExample(int x, boolean v) {
+        System.out.println(this);
+        this.x = x;
+        this.v = v;
     }
 }
 
